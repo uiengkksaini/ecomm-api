@@ -6,6 +6,8 @@ const userSchema = new mongoose.Schema(
     email: { type: String, required: true, unique: true },
     password: { type: String, required: true },
     mobile: { type: String, required: true },
+    resetPasswordToken: String, // Field to store the reset token
+    resetPasswordExpiry: Date, // Field to store the expiry of the token
   },
   { timestamps: true }
 );
