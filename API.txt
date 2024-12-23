@@ -1,12 +1,21 @@
-1.  Register User
-2.  Login 
-3.  Forgot Password
-4.  Reset Password
-5.  Update Profile
-        Bio
-        Profile Pic
-        Social Media Links
-            Facebook
-            Twitter
-            Instagram
-            LinkedIn
+1.  Register User==>
+    Name, Email, MobileNumber, Password, Confirm Password
+2.  Login==>
+    Email, Password
+3.  Forgot Password==>
+    EmailID
+4.  Reset Password==>
+    New Password
+5.  Update Profile==>
+        Bio, Profile Pic, Social Media Links:{facebook:'',twitter:'',linkedIn:'',instagram:''}
+6.  Change Password==>
+    Old Password, New Password, Confirm Password
+7.  Products==>
+8.  Product Detail==>
+9.  Order History==>
+10. Checkout==>
+11. Payment==>
+
+Functionality to handle from frontend
+1.  Cart- add, remove
+2.  Logout- clear token

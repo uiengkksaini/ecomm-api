@@ -3,9 +3,8 @@ const { registerUser } = require("../controllers/userController");
 const { loginUser } = require("../controllers/loginController");
 const { forgotPassword } = require("../controllers/forgotController");
 const { resetPassword } = require("../controllers/resetController");
-const {
-  updateProfileController,
-} = require("../controllers/updateProfileController");
+const { updateProfile } = require("../controllers/updateProfileController");
+const { changePassword } = require("../controllers/changePasswordController");
 const { verifyToken } = require("../middlewares/authMiddlewares");
 const router = express.Router();
 
@@ -67,6 +66,46 @@ router.post("/register", registerUser);
  *         description: Invalid credentials.
  */
 router.post("/login", loginUser);
+
+/**
+ * @swagger
+ * /change-password:
+ *   post:
+ *     summary: Change user password
+ *     description: Allows an authenticated user to change their password by providing the current and new passwords.
+ *     tags: [Users]
+ *
+ *     security:
+ *       - bearerAuth: []
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             properties:
+ *               currentPassword:
+ *                 type: string
+ *                 description: The user's current password
+ *               newPassword:
+ *                 type: string
+ *                 description: The user's new password
+ *               confirmNewPassword:
+ *                 type: string
+ *                 description: Confirmation of the new password
+ *     responses:
+ *       200:
+ *         description: Password changed successfully
+ *       400:
+ *         description: Bad request, invalid passwords or validation errors
+ *       401:
+ *         description: Unauthorized, authentication required
+ *       404:
+ *         description: User not found
+ *       500:
+ *         description: Internal server error
+ */
+router.post("/change-password", verifyToken, changePassword);
 
 /**
  * @swagger
@@ -148,54 +187,15 @@ router.post("/reset-password", resetPassword);
  *                 properties:
  *                   facebook:
  *                     type: string
- *                     description: Facebook profile link
  *                   twitter:
  *                     type: string
- *                     description: Twitter profile link
  *                   instagram:
  *                     type: string
- *                     description: Instagram profile link
  *                   linkedin:
  *                     type: string
- *                     description: LinkedIn profile link
  *     responses:
  *       200:
  *         description: Profile updated successfully
- *         content:
- *           application/json:
- *             schema:
- *               type: object
- *               properties:
- *                 id:
- *                   type: string
- *                   description: User ID
- *                 name:
- *                   type: string
- *                   description: User's name
- *                 email:
- *                   type: string
- *                   description: User's email
- *                 bio:
- *                   type: string
- *                   description: User's bio
- *                 profilePic:
- *                   type: string
- *                   description: Profile picture URL
- *                 socialMediaLinks:
- *                   type: object
- *                   properties:
- *                     facebook:
- *                       type: string
- *                       description: Facebook profile link
- *                     twitter:
- *                       type: string
- *                       description: Twitter profile link
- *                     instagram:
- *                       type: string
- *                       description: Instagram profile link
- *                     linkedin:
- *                       type: string
- *                       description: LinkedIn profile link
  *       401:
  *         description: Unauthorized, authentication required
  *       400:
@@ -205,6 +205,6 @@ router.post("/reset-password", resetPassword);
  *       500:
  *         description: Internal server error
  */
-router.put("/update-profile", verifyToken, updateProfileController);
+router.put("/update-profile", verifyToken, updateProfile);
 
 module.exports = router;

@@ -1,6 +1,6 @@
 const User = require("../models/userSchema");
 
-const updateProfileController = async (req, res) => {
+const updateProfile = async (req, res) => {
   const { bio, profilePic, socialMediaLinks } = req.body;
   const userId = req.user.userId; // Getting user ID from the JWT payload
 
@@ -39,4 +39,4 @@ const updateProfileController = async (req, res) => {
   }
 };
 
-module.exports = { updateProfileController };
+module.exports = { updateProfile };
