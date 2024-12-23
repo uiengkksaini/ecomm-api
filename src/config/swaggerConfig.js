@@ -12,7 +12,7 @@ const swaggerOptions = {
         "API documentation for user registration, login, and password reset",
     },
   },
-  apis: [path.join(__dirname, "../routes/userRoutes.js")],
+  apis: [path.join(__dirname, "../routes/*.js")],
 };
 
 const swaggerDocs = swaggerJsdoc(swaggerOptions);

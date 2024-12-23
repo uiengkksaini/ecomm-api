@@ -1,21 +1,52 @@
-1.  Register User==>
-    Name, Email, MobileNumber, Password, Confirm Password
-2.  Login==>
-    Email, Password
-3.  Forgot Password==>
-    EmailID
-4.  Reset Password==>
-    New Password
-5.  Update Profile==>
-        Bio, Profile Pic, Social Media Links:{facebook:'',twitter:'',linkedIn:'',instagram:''}
-6.  Change Password==>
-    Old Password, New Password, Confirm Password
-7.  Products==>
-8.  Product Detail==>
-9.  Order History==>
-10. Checkout==>
-11. Payment==>
+User Functionality
 
-Functionality to handle from frontend
-1.  Cart- add, remove
-2.  Logout- clear token
+1.  Register User
+    Register a new user with name, email, mobile number, and password details.
+
+2.  Login
+    Log in using email and password for authentication.
+
+3.  Forgot Password
+    Request password reset by providing the registered email.
+
+4.  Reset Password
+    Reset the password by entering a new one.
+
+5.  Update Profile
+    Update user profile with bio, profile picture, and social media links (Facebook, Twitter, LinkedIn, Instagram).
+
+6.  Change Password
+    Change the password by providing old password, new password, and confirming the new password.
+
+7.  Get Product
+    Retrieve a list of all available products.
+
+
+8.  Get a Single Product
+    View details of a specific product by its ID.
+
+
+9.  Order History
+    View the history of past orders made by the user.
+
+
+10. Checkout
+    Complete the purchase process and finalize the order.
+
+
+11. Payment
+    Make payment for the items in the cart.
+
+
+Frontend Functionality (User-Side)
+1.  Cart
+    Add Items: Add products to the shopping cart.
+    Remove Items: Remove products from the cart.
+
+2.  Logout
+    Log out and clear the authentication token.
+
+
+Admin Functionality-
+1.  Add Products
+    Admin can add new products with details such as name, description, category, brand, price, images, and reviews.
