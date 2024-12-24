@@ -21,22 +21,14 @@ User Functionality
 7.  Get Product
     Retrieve a list of all available products.
 
-
 8.  Get a Single Product
     View details of a specific product by its ID.
 
-
-9.  Order History
-    View the history of past orders made by the user.
-
-
-10. Checkout
+9.  Checkout
     Complete the purchase process and finalize the order.
 
-
-11. Payment
-    Make payment for the items in the cart.
-
+10. Order History and Payment
+    View the history of past orders made by the user.
 
 Frontend Functionality (User-Side)
 1.  Cart
@@ -46,7 +38,9 @@ Frontend Functionality (User-Side)
 2.  Logout
     Log out and clear the authentication token.
 
-
 Admin Functionality-
 1.  Add Products
     Admin can add new products with details such as name, description, category, brand, price, images, and reviews.
+
+2.  Get All orders
+    Access all order details from order table.

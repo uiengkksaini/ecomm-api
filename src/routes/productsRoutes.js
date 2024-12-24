@@ -1,7 +1,6 @@
 const express = require("express");
 const productController = require("../controllers/productController");
 const { verifyToken } = require("../middlewares/authMiddlewares");
-const { verify } = require("crypto");
 
 const router = express.Router();
 
@@ -12,13 +11,14 @@ const router = express.Router();
  *     description: API to manage products
  */
 
+
 /**
  * @swagger
  * /products/add:
  *   post:
  *     summary: Add a new product (admin only)
  *     description: Adds a new product to the database. Requires admin authentication.
- *     tags: [Products]
+ *     tags: [Admin]
  *     security:
  *       - bearerAuth: []
  *     requestBody:

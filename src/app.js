@@ -4,6 +4,7 @@ const cors = require("cors");
 const connectDB = require("./config/db");
 const userRoutes = require("./routes/userRoutes");
 const productsRoutes = require("./routes/productsRoutes");
+const orderRoutes = require("./routes/orderRoutes");
 const swaggerUi = require("swagger-ui-express");
 const swaggerDocs = require("./config/swaggerConfig");
 
@@ -26,6 +27,7 @@ app.use(express.json());
 // Routes
 app.use("/api", userRoutes);
 app.use("/api", require("./routes/productsRoutes"));
+app.use("/api", require("./routes/orderRoutes"));
 
 // listening server on port 5000
 const PORT = process.env.PORT || 5000;
