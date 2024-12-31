@@ -26,8 +26,8 @@ app.use(express.json());
 
 // Routes
 app.use("/api", userRoutes);
-app.use("/api", require("./routes/productsRoutes"));
-app.use("/api", require("./routes/orderRoutes"));
+app.use("/api", productsRoutes);
+app.use("/api", orderRoutes);
 
 // listening server on port 5000
 const PORT = process.env.PORT || 5000;

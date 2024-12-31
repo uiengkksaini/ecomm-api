@@ -37,7 +37,7 @@ const forgotPassword = async (req, res) => {
     await user.save();
 
     // Send the password reset token to the user's email
-    const resetUrl = `http://localhost:5000/api/reset-password/${resetToken}`;
+    const resetUrl = `http://localhost:5173/reset-password/${resetToken}`;
 
     const mailOptions = {
       from: "frontenddev.life@gmail.com",
